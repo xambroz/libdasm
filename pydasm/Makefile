@@ -1,9 +1,10 @@
 DESTDIR=/
 BINDIR=/usr/local/bin
+PYTHON ?= python
 
 all:
-	python setup.py build
+	$(PYTHON) setup.py build
 
 install:
-	python setup.py install --skip-build --root $(DESTDIR)
+	$(PYTHON) setup.py install --skip-build --root $(DESTDIR)
 	install -m 755 -p -D das.py $(DESTDIR)$(BINDIR)/das.py
